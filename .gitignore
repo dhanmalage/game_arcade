@@ -1,0 +1,96 @@
+# Laravel specific
+/node_modules
+/public/hot
+/public/storage
+/public/build
+/storage/*.key
+/storage/pail
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/storage/app/public/*
+/vendor
+.env
+.env.*
+!.env.example
+.phpunit.result.cache
+/.phpunit.cache
+/bootstrap/ssr
+auth.json
+
+# IDE and Editor folders
+/.idea
+/.vscode
+/.fleet
+/.nova
+/.zed
+.phpactor.json
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite-journal
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Application specific
+/resources/js/actions
+/resources/js/routes
+/resources/js/wayfinder
+
+# Dependencies and package management
+composer.phar
+/vendor
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+
+# Testing and local development
+Homestead.json
+Homestead.yaml
+.phpunit.cache
+.phpunit.result.cache
+/coverage
+.env.backup
+.env.production
+
+# Build and compile directories
+/dist
+/tmp
+/out-tsc
+/.sass-cache
+
+# Cache
+.cache
+*.cache
+.temp
+*.temp
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# TypeScript
+*.tsbuildinfo
