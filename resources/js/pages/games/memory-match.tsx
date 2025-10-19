@@ -37,7 +37,7 @@ export default function MemoryMatchGame() {
     setMoves(0);
     setIsWon(false);
   };
-
+  
   useEffect(() => {
     initGame();
   }, []);
