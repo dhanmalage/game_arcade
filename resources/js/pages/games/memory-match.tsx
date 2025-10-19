@@ -4,12 +4,24 @@ import { Head, Link, usePage } from '@inertiajs/react';
 import { useState, useEffect } from 'react';
 import { Shuffle, RotateCcw, Trophy } from 'lucide-react';
 
-export default function MemoryMatchGame() {
-    const { auth } = usePage<SharedData>().props;
+interface Card {
+  id: number;
+  emoji: string;
+  isFlipped: boolean;
+}
 
-      const [cards, setCards] = useState([]);
-  const [flipped, setFlipped] = useState([]);
-  const [matched, setMatched] = useState([]);
+interface PageProps {
+  auth: {
+    user: any;
+  };
+}
+
+export default function MemoryMatchGame() {
+  const { auth } = usePage<SharedData>().props;
+
+  const [cards, setCards] = useState<Card[]>([]);
+  const [flipped, setFlipped] = useState<number[]>([]);
+  const [matched, setMatched] = useState<number[]>([]);
   const [moves, setMoves] = useState(0);
   const [isWon, setIsWon] = useState(false);
 
@@ -49,7 +61,7 @@ export default function MemoryMatchGame() {
     }
   }, [flipped]);
 
-  const handleClick = (i) => {
+  const handleClick = (i: number): void => {
     if (flipped.length === 2 || flipped.includes(i) || matched.includes(i)) return;
     setFlipped([...flipped, i]);
   };
