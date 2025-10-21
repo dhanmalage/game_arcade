@@ -15,7 +15,7 @@ class GameSeeder extends Seeder
         $games = [
             [
                 'title' => 'Puzzle Master',
-                'description' => 'Challenge your mind with this addictive puzzle game featuring hundreds of levels.',
+                'description' => 'A classic sliding puzzle game where you arrange numbered tiles in order. Choose between 3x3 and 4x4 grids and challenge yourself to solve it in the fewest moves!',
                 'thumbnail' => 'https://via.placeholder.com/400x225/ff6b35/ffffff?text=Puzzle+Master',
                 'view_name' => 'puzzle-master',
             ],

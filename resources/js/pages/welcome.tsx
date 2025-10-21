@@ -61,9 +61,60 @@ export default function Welcome() {
                         <h1 className="text-4xl font-bold text-[#1b1b18] dark:text-[#EDEDEC] mb-4">
                             Game Arcade
                         </h1>
-                        <p className="text-lg text-[#706f6c] dark:text-[#A1A09A]">
+                        <p className="text-lg text-[#706f6c] dark:text-[#A1A09A] mb-6">
                             Discover amazing games and start playing now
                         </p>
+                        
+                        {/* Featured Games */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto mb-8">
+                            <Link
+                                href="/puzzle-master"
+                                className="block bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg"
+                            >
+                                <div className="text-2xl font-bold mb-2">🧩 Puzzle Master</div>
+                                <p className="text-blue-100 mb-4">
+                                    Challenge yourself with our sliding puzzle game!
+                                </p>
+                                <div className="inline-flex items-center text-sm font-medium">
+                                    Play Now 
+                                    <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                            </Link>
+                            
+                            <Link
+                                href="/space-adventure"
+                                className="block bg-gradient-to-r from-indigo-600 to-blue-800 text-white rounded-lg p-6 hover:from-indigo-700 hover:to-blue-900 transition-all duration-300 hover:scale-105 shadow-lg"
+                            >
+                                <div className="text-2xl font-bold mb-2">🚀 Space Adventure</div>
+                                <p className="text-indigo-100 mb-4">
+                                    Navigate through space and avoid asteroids!
+                                </p>
+                                <div className="inline-flex items-center text-sm font-medium">
+                                    Launch Mission 
+                                    <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                            </Link>
+                            
+                            <Link
+                                href="/racing-thunder"
+                                className="block bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg p-6 hover:from-orange-600 hover:to-red-700 transition-all duration-300 hover:scale-105 shadow-lg"
+                            >
+                                <div className="text-2xl font-bold mb-2">🏎️ Racing Thunder</div>
+                                <p className="text-orange-100 mb-4">
+                                    High-speed racing with realistic physics!
+                                </p>
+                                <div className="inline-flex items-center text-sm font-medium">
+                                    Start Racing 
+                                    <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                            </Link>
+                        </div>
                     </div>
 
                     {featuredGames && featuredGames.length > 0 ? (
