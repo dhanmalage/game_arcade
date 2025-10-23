@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Head } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
+import AppLayout from '@/layouts/app-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Shuffle, RotateCcw, Trophy, Timer, Target } from 'lucide-react';
@@ -213,7 +214,7 @@ const PuzzleMaster: React.FC<PuzzleMasterProps> = ({ game }) => {
         <>
             <Head title={game.title} />
 
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+            <AppLayout className="bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
                 <div className="max-w-4xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8">
@@ -375,7 +376,7 @@ const PuzzleMaster: React.FC<PuzzleMasterProps> = ({ game }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </AppLayout>
         </>
     );
 };

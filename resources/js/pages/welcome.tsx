@@ -1,13 +1,13 @@
-import { dashboard, login, register } from '@/routes';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
-import AppearanceToggleCompact from '@/components/appearance-toggle-compact';
+import AppLayout from '@/layouts/app-layout';
 
 interface Game {
     id: number;
     title: string;
     description: string;
     thumbnail: string;
+    view_name?: string;
 }
 
 interface WelcomeProps extends SharedData {
@@ -26,95 +26,15 @@ export default function Welcome() {
                     rel="stylesheet"
                 />
             </Head>
-            <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
-                <header className="mb-6 w-full max-w-7xl text-sm">                    
-                    <nav className="flex items-center justify-end gap-4">
-                        <AppearanceToggleCompact />
-                        {auth.user ? (
-                            <Link
-                                href={dashboard()}
-                                className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                            >
-                                Dashboard
-                            </Link>
-                        ) : (
-                            <>
-                                <Link
-                                    href={login()}
-                                    className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
-                                >
-                                    Log in
-                                </Link>
-                                <Link
-                                    href={register()}
-                                    className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                                >
-                                    Register
-                                </Link>
-                            </>
-                        )}
-                    </nav>
-                </header>
-                
+            <AppLayout>
                 <div className="w-full max-w-7xl mx-auto px-6 py-12">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl font-bold text-[#1b1b18] dark:text-[#EDEDEC] mb-4">
                             Game Arcade
                         </h1>
-                        <p className="text-lg text-[#706f6c] dark:text-[#A1A09A] mb-6">
+                        <p className="text-lg text-[#706f6c] dark:text-[#A1A09A] mb-8">
                             Discover amazing games and start playing now
                         </p>
-                        
-                        {/* Featured Games */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto mb-8">
-                            <Link
-                                href="/puzzle-master"
-                                className="block bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg"
-                            >
-                                <div className="text-2xl font-bold mb-2">🧩 Puzzle Master</div>
-                                <p className="text-blue-100 mb-4">
-                                    Challenge yourself with our sliding puzzle game!
-                                </p>
-                                <div className="inline-flex items-center text-sm font-medium">
-                                    Play Now 
-                                    <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                    </svg>
-                                </div>
-                            </Link>
-                            
-                            <Link
-                                href="/space-adventure"
-                                className="block bg-gradient-to-r from-indigo-600 to-blue-800 text-white rounded-lg p-6 hover:from-indigo-700 hover:to-blue-900 transition-all duration-300 hover:scale-105 shadow-lg"
-                            >
-                                <div className="text-2xl font-bold mb-2">🚀 Space Adventure</div>
-                                <p className="text-indigo-100 mb-4">
-                                    Navigate through space and avoid asteroids!
-                                </p>
-                                <div className="inline-flex items-center text-sm font-medium">
-                                    Launch Mission 
-                                    <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                    </svg>
-                                </div>
-                            </Link>
-                            
-                            <Link
-                                href="/racing-thunder"
-                                className="block bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg p-6 hover:from-orange-600 hover:to-red-700 transition-all duration-300 hover:scale-105 shadow-lg"
-                            >
-                                <div className="text-2xl font-bold mb-2">🏎️ Racing Thunder</div>
-                                <p className="text-orange-100 mb-4">
-                                    High-speed racing with realistic physics!
-                                </p>
-                                <div className="inline-flex items-center text-sm font-medium">
-                                    Start Racing 
-                                    <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                    </svg>
-                                </div>
-                            </Link>
-                        </div>
                     </div>
 
                     {featuredGames && featuredGames.length > 0 ? (
@@ -170,7 +90,7 @@ export default function Welcome() {
                         </div>
                     )}
                 </div>
-            </div>
+            </AppLayout>
         </>
     );
 }

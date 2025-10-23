@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Head } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
+import AppLayout from '@/layouts/app-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Play, Pause, RotateCcw, Trophy, Zap, Shield, Target, Coins, Heart, Swords } from 'lucide-react';
@@ -639,7 +640,7 @@ const TowerDefensePro: React.FC<TowerDefenseProProps> = ({ game }) => {
         <>
             <Head title={game.title} />
 
-            <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4">
+            <AppLayout className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-8">
@@ -879,7 +880,7 @@ const TowerDefensePro: React.FC<TowerDefenseProProps> = ({ game }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </AppLayout>
         </>
     );
 };
