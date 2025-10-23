@@ -10,5 +10,6 @@ class Game extends Model
         'title',
         'description',
         'thumbnail',
+        'view_name',
     ];
 }
