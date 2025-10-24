@@ -11,16 +11,16 @@ interface Game {
     view_name?: string;
 }
 
-interface WelcomeProps extends SharedData {
-    featuredGames: Game[];
+interface GamesIndexProps extends SharedData {
+    games: Game[];
 }
 
-export default function Welcome() {
-    const { auth, featuredGames } = usePage<WelcomeProps>().props;
+export default function GamesIndex() {
+    const { games } = usePage<GamesIndexProps>().props;
 
     return (
         <>
-            <Head title="Welcome">
+            <Head title="All Games">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
                     href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
@@ -31,15 +31,15 @@ export default function Welcome() {
                 <div className="w-full max-w-7xl mx-auto px-6 py-12">
                     <div className="text-center mb-16">
                         <h1 className="text-5xl font-bold bg-gradient-to-r from-[#f53003] via-[#ff6b35] to-[#f53003] bg-clip-text text-transparent mb-6">
-                            🎮 Game Arcade
+                            🎮 All Games
                         </h1>
                         <p className="text-xl text-[#706f6c] dark:text-[#A1A09A] mb-4 max-w-2xl mx-auto">
-                            Discover amazing games and start playing now
+                            Browse our complete collection of games
                         </p>
                         <div className="flex items-center justify-center gap-2 text-sm text-[#706f6c] dark:text-[#A1A09A]">
                             <span className="inline-flex items-center gap-1">
                                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                                {featuredGames?.length || 0} Games Available
+                                {games?.length || 0} Games Available
                             </span>
                             <span>•</span>
                             <span>Free to Play</span>
@@ -48,9 +48,9 @@ export default function Welcome() {
                         </div>
                     </div>
 
-                    {featuredGames && featuredGames.length > 0 ? (
+                    {games && games.length > 0 ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                            {featuredGames.map((game) => (
+                            {games.map((game) => (
                                 <Link
                                     key={game.id}
                                     href={`/game/${game.id}`}
