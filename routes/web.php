@@ -5,7 +5,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
-        'featuredGames' => \App\Models\Game::all()
+        'featuredGames' => \App\Models\Game::all(),
     ]);
 })->name('home');
 
