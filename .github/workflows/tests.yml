@@ -23,7 +23,7 @@ jobs:
       - name: Prep Application
         run: |
           cp .env.example .env
-          php artisan key.generate
+          php artisan key:generate
 
       - name: Run Tests
         env:
