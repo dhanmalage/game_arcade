@@ -31,6 +31,12 @@ jobs:
         with: 
           ref: ${{ github.head_ref }}
 
+      - name: Cache dependencies
+        uses: actions/cache@v4.3.0
+        with:
+          key: composer-cache-${{ hashFiles('**/composer.lock') }}
+          path: vendor/
+
       - name: Setup PHP and Composer
         uses: shivammathur/setup-php@2.35.5
         with:
