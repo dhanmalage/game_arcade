@@ -3,7 +3,7 @@ name: Setup
 description: Sets up PHP and Composer
 
 runs:
-  using: compsite
+  using: composite
   steps: 
     - name: Setup cache environment
       id: extcache
