@@ -21,26 +21,17 @@ jobs:
           MYSQL_DATABASE: project7
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
 
+    env: 
+      PHP_VERSION: '8.3'
+      PHP_EXTENSIONS: dom, curl, libxml, mbstring, xml, pcntl, pdo, gd, redis, igbinary, msgpack, lzf, zstd, lz4, memcached, gmp, :php-psr
+      CACHE_KEY: extension-cache-v1
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5.0.0
 
-      - name: Get Composer cache dir
-        id: composer-cache-dir
-        run: echo dir=$(composer config cache-files-dir) >> $GITHUB_OUTPUT
-
-      - name: Cache dependencies
-        uses: actions/cache@v4.3.0
-        with:
-          key: composer-cache-${{ hashFiles('**/composer.lock') }}
-          path: ${{ steps.composer-cache-dir.outputs.dir }}
-          restore-keys: composer-cache-
-
-      - name: Setup PHP and Composer
-        uses: shivammathur/setup-php@2.35.5
-        with:
-          php-version: '8.3'
-          tools: composer:v2
+      - name: Setup
+        uses: ./.github/actions/setup
 
       - name: Install Dependencies
         run: composer install -q --no-interaction
