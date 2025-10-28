@@ -11,6 +11,20 @@ jobs:
   laravel-pint:
     runs-on: ubuntu-latest
 
+    services:
+      redis:
+        image: redis:8.2.2
+        ports:
+          - 6379:6379
+      
+      mysql:
+        image: mysql:8.0        
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_DATABASE: project7
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5.0.0
