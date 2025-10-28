@@ -179,40 +179,7 @@ export default function SnakeGame() {
         <>
             <Head title="Snake Classic" />
             
-            <AppLayout className="bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100 flex items-center justify-center p-8">
-                <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl">                    
-                    <nav className="flex items-center justify-end gap-4">
-                        {auth.user ? (
-                            <Link
-                                href={dashboard()}
-                                className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                            >
-                                Dashboard
-                            </Link>
-                        ) : (
-                            <>
-                                <Link
-                                    href={login()}
-                                    className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
-                                >
-                                    Log in
-                                </Link>
-                                <Link
-                                    href={register()}
-                                    className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                                >
-                                    Register
-                                </Link>
-                            </>
-                        )}
-                    </nav>
-                </header>
-                <div className="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
-                    <main className="flex w-full max-w-[335px] flex-col-reverse lg:max-w-4xl lg:flex-row">
-                        <div className="flex-1 rounded-br-lg rounded-bl-lg bg-white p-6 pb-12 text-[13px] leading-[20px] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-tl-lg lg:rounded-br-none lg:p-20 dark:bg-[#161615] dark:text-[#EDEDEC] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]">
-                            
-                            
-                            <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-900 to-emerald-950 p-8">
+            <AppLayout className="bg-gradient-to-br from-green-900 to-emerald-950 flex items-center justify-center p-8">
                                 <div className="mb-6 text-center">
                                     <h1 className="text-5xl font-bold text-green-300 mb-2">🐍 Snake Game</h1>
                                     <p className="text-green-200 text-lg">Score: {score}</p>
@@ -297,13 +264,7 @@ export default function SnakeGame() {
                                     Restart Game
                                     </button>
                                 )}
-                                </div>
-
-                        </div>
-                    </main>
-                </div>
-                <div className="hidden h-14.5 lg:block"></div>
-            </div>
+            </AppLayout>
         </>
     );
 }

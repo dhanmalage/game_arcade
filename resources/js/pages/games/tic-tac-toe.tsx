@@ -320,9 +320,6 @@ export default function TicTacToe() {
                                     </button>
                                     </div>
                                 </div>
-                                </div>
-
-
             </AppLayout>
         </>
     );
