@@ -11,31 +11,11 @@ jobs:
   laravel-pint:
     runs-on: ubuntu-latest
 
-    services:
-      redis:
-        image: redis:8.2.2
-        ports:
-          - 6379:6379
-      
-      mysql:
-        image: mysql:8.0        
-        ports:
-          - 3306:3306
-        env:
-          MYSQL_DATABASE: project7
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5.0.0
         with: 
           ref: ${{ github.head_ref }}
-
-      - name: Cache dependencies
-        uses: actions/cache@v4.3.0
-        with:
-          key: composer-cache-${{ hashFiles('**/composer.lock') }}
-          path: vendor/
 
       - name: Setup PHP and Composer
         uses: shivammathur/setup-php@2.35.5
