@@ -25,11 +25,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v5.0.0
 
+      - name: Get Composer cache dir
+        id: composer-cache-dir
+        run: echo dir=$(composer config cache-files-dir) >> $GITHUB_OUTPUT
+
       - name: Cache dependencies
         uses: actions/cache@v4.3.0
         with:
           key: composer-cache-${{ hashFiles('**/composer.lock') }}
-          path: vendor/
+          path: ${{ steps.composer-cache-dir.outputs.dir }}
+          restore-keys: composer-cache-
 
       - name: Setup PHP and Composer
         uses: shivammathur/setup-php@2.35.5
